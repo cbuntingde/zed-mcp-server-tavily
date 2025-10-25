@@ -1,3 +1,6 @@
+// Copyright 2025 Chris Bunting <cbuntingde@gmail.com>
+// Zed extension that wraps the tavily-mcp MCP server for web search functionality
+
 use schemars::JsonSchema;
 use serde::Deserialize;
 use std::env;
@@ -7,7 +10,7 @@ use zed_extension_api::{
 };
 
 const PACKAGE_NAME: &str = "tavily-mcp";
-const PACKAGE_VERSION: &str = "0.2.9";
+const PACKAGE_VERSION: &str = "0.2.10";
 const SERVER_PATH: &str = "node_modules/tavily-mcp/build/index.js";
 const CONTEXT_SERVER_ID: &str = "mcp-server-tavily";
 struct TavilyContextServerExtension;

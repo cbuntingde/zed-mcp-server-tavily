@@ -1,6 +1,6 @@
 [package]
 name = "mcp_server_tavily"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 publish = false
 license = "MIT"
@@ -11,5 +11,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 serde = "1.0"
-zed_extension_api = "0.6.0"
+zed_extension_api = "0.7.0"
 schemars = "0.8"
