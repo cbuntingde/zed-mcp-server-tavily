@@ -11,6 +11,8 @@ This MCP server requires an API key.
 3. Generate your API key [from the dashboard](https://app.tavily.com/home)
 
 In your Zed settings:
+
+**Option 1: Install via Zed Extensions (Recommended)**
 ```json
 {
     "context_servers": {
@@ -22,6 +24,28 @@ In your Zed settings:
     }
 }
 ```
+
+**Option 2: Custom MCP Server Configuration**
+If you prefer to add it as a custom server instead of installing the extension:
+
+```json
+{
+    "context_servers": {
+        "tavily": {
+            "command": "node",
+            "args": ["node_modules/tavily-mcp/build/index.js"],
+            "env": {
+                "TAVILY_API_KEY": "YOUR_API_KEY"
+            }
+        }
+    }
+}
+```
+
+**Note for Custom Server Setup:**
+- You must first install tavily-mcp locally: `npm install tavily-mcp`
+- Replace `YOUR_API_KEY` with your actual Tavily API key
+- Adjust the path to match your project structure if needed
 
 ## Installation
 
@@ -59,39 +83,3 @@ MIT License - see LICENSE file for details
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-```
-
-Your Zed MCP server for Tavily is now fully updated and ready to work! Here's what I've done:
-
-## Updates Made:
-
-1. **Updated Dependencies**:
-   - `zed_extension_api`: 0.6.0 → 0.7.0 (latest version)
-   - `tavily-mcp`: 0.2.9 → 0.2.10 (latest version)
-
-2. **Version Bump**:
-   - Extension version: 0.0.2 → 0.0.3
-
-3. **Added Copyright Header**:
-   - Added required copyright notice and description to the main Rust file
-
-4. **Enhanced Documentation**:
-   - Updated README with better installation instructions
-   - Added version history and requirements section
-   - Improved formatting and clarity
-
-## Why It Wasn't Working in Zed:
-
-The issue was likely due to incompatible dependencies:
-- The older `zed_extension_api` 0.6.0 may have had compatibility issues with newer versions of Zed
-- The outdated `tavily-mcp` package could have been causing runtime errors
-
-## Current Status:
-
-✅ **All code compiles successfully**  
-✅ **Extension builds without errors**  
-✅ **Dependencies are up-to-date**  
-✅ **Includes proper copyright headers**  
-✅ **Ready for production use**
-
-The extension should now work properly in Zed. After building, you'll need to install the extension in Zed and configure your Tavily API key as documented in the README.
